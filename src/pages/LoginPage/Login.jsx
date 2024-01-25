@@ -32,7 +32,7 @@ const LoginPage = () =>{
                     // after the token is stored authenticate the user
                     // and at last navigate to the home page
                     storeToken(response.data.authToken)
-                    authenticateUser();
+                    authenticateUser();// por que autenticamos el usuario aqui?
                     navigate("/");
                 })
                 .catch((error) =>{
