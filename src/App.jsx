@@ -8,14 +8,12 @@ import Navbar from './components/Navbar/Navbar'
 function App() {
     return(
         <>
-
-        <Navbar/>
-        <Routes>
-            <Route path="/login" element={ <LoginPage />} />
-            <Route path="/signup" element={ <SignupPage />} />
-        </Routes>
+            <Navbar/>
+            <Routes>
+                <Route path="/login" element={ <LoginPage />} />
+                <Route path="/signup" element={ <SignupPage />} />
+            </Routes>
         </>
-
     )
 }
 

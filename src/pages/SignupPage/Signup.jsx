@@ -1,18 +1,23 @@
+import { useState, useContext } from "react";
+import authService from "../../services/auth.service";
+import { AuthContext } from "../../context/auth.context";
+import { useNavigate } from "react-router-dom";
 
 const SignupPage = () =>{
     const [userName, setUserName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const [errorMessage, setErrorMessage] = useState(undefined);
+    const [message, setMessage] = useState(undefined);
 
     const handleUserName = (e) => setUserName(e.target.value);
+    const handleEmail = (e) => setEmail(e.target.value);
     const handlePassword = (e) => setPassword(e.target.value);
-
+    const navigate = useNavigate()
     const handleSubmit = (e) => {
         e.preventDefault();
-        setErrorMessage(undefined)
+        setMessage(undefined)
         if(userName === "" || password === ""  || email == "")
-            setErrorMessage("All the fields must be filled")
+            setMessage("All the fields must be filled")
         else
         {
             const requestBody = {userName, password, email};
@@ -21,11 +26,14 @@ const SignupPage = () =>{
                 .then((response)=>{
                     console.log(response)
                     // If the POST request is successful redirect to login,
-                    navigate("/login");
+                    setMessage(response.data.message);
+                    setTimeout(()=>{
+                        navigate("/login");
+                    },1000);
                 })
                 .catch((error) =>{
                     console.log(error);
-                    setErrorMessage(error.response.data.message);
+                    setMessage(error.response.data.message);
                 })
         }
     //ENVIAR LOS DATOS DE USER Y PASSWORD AL BACK para esto usamos el servicio de Authservice
@@ -40,9 +48,9 @@ const SignupPage = () =>{
                 <input type="text" onChange={handleUserName}/>
                 <input type="email" onChange={handleEmail}/>
                 <input type="password" onChange={handlePassword}/>
-                <button>LOG IN</button>
+                <button>SIGN UP</button>
             </form>
-            {errorMessage && <p className="error-message">{errorMessage}</p>}
+            {message && <p className="error-message">{message}</p>}
         </>
     );
 }
