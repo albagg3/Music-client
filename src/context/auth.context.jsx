@@ -11,6 +11,10 @@ function AuthProviderWrapper(props) {
   const storeToken = (token) => {
     localStorage.setItem("authToken", token);
   };
+  
+    const removeToken = () => {
+      localStorage.removeItem("authToken");
+    };
 
   const authenticateUser = () => {
     // Get the stored token from the localStorage
@@ -24,14 +28,17 @@ function AuthProviderWrapper(props) {
         .then((response) => {
           // If the server verifies that JWT token is valid  ✅
           const user = response.data;
+
           // Update state variables
           setIsLoggedIn(true);
           setIsLoading(false);
           setUser(user);
         })
-        .catch(() => { 
+        .catch((error) => { 
           // If the server sends an error response (invalid token) ❌
           // Update state variables
+          console.log(error.response.data.message)
+          removeToken();
           setIsLoggedIn(false);
           setIsLoading(false);
           setUser(null);
@@ -42,10 +49,6 @@ function AuthProviderWrapper(props) {
       setIsLoading(false);
       setUser(null);
     }
-  };
-
-  const removeToken = () => {
-    localStorage.removeItem("authToken");
   };
 
   const logOutUser = () => {
