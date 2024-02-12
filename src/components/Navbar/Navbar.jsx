@@ -1,6 +1,14 @@
+import './navBar.css'
+
 const Navbar = () => {
     return(
-        <h1>NAVBAR</h1>
+        <>
+        <nav className="navbar-container">
+            <h1>MUSIC COMMUNITY</h1>
+            {/* <p>LOG IN</p> */}
+        </nav>
+
+        </>
     );
 }
 

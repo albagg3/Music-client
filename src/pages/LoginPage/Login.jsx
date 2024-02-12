@@ -1,7 +1,9 @@
+import './login.css'
+
 import { useState, useContext } from "react";
 import authService from "../../services/auth.service";
 import { AuthContext } from "../../context/auth.context";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 
 const LoginPage = () =>{
@@ -46,12 +48,23 @@ const LoginPage = () =>{
     } 
     return(
         <>
-            <h1>Log In</h1>
-            <form onSubmit={handleSubmit}>
-                <input type="email" onChange={handleEmail}/>
-                <input type="password" onChange={handlePassword}/>
-                <button>LOG IN</button>
-            </form>
+            <section className='container-full-page-auth'>
+                <div className='container-form-title'>
+                    <p>LOG IN</p>
+                    <form className='auth-form' onSubmit={handleSubmit}>
+                        <label>Email:</label>
+                        <input className='input' type="email" onChange={handleEmail}/>
+                        <label>Password:</label>
+                        <input className='input' type="password" onChange={handlePassword}/>
+                        <button className='btn'>LOG IN</button>
+                    </form>
+                    <p>Forgot your password?</p>
+                    <div className='flex-column-center'>
+                        <p>Don't have an account?</p>
+                        <Link to='/signup'><p className='link'>Register</p></Link>
+                    </div>
+                </div>
+            </section>
             {errorMessage && <p className="error-message">{errorMessage}</p>}
         </>
     );

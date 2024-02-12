@@ -1,0 +1,100 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --theme-color: #292929;
+    --theme-color-transparent: #292929ce;
+    --primary-color: #121212;
+    --accent-color: #BB86FC;
+    --accent-third-color: #3700b3;
+    --accent-secondary-color: #03DAC6;
+    --error-color: #CF6679;
+    --text-color-primary: #f1f1f1;
+    --text-color-secondary: #181818;
+}
+
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: Montserrat;
+    /* color:var(--text-color-primary); */
+
+}
+
+body{
+    background-color: var(--primary-color);
+}
+
+
+/*        COMMON ELEMENTS       */
+.input{
+    height: 40px;
+    border-radius: 10px;
+    border:none;
+    width: 300px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding: 15px;
+    background-color: var(--text-color-primary);
+}
+
+.btn{
+    height: 40px;
+    border-radius: 10px;
+    border:none;
+    width: 300px;
+    background-color: var(--accent-color);
+}
+
+.flex-column-center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.link{
+    
+    color:var(--accent-color)
+}
+/*------------------------------*/
+
+
+/* Authentication  LOGIN SIGNUP */
+.container-full-page-auth{
+    height: calc(100vh - 96px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-form{
+    display: flex;
+    flex-direction: column;
+}
+
+.container-form-title{
+    height: 60vh;
+    background-color:var(--theme-color-transparent);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 500px;
+    border-radius: 10px;
+    color: var(--text-color-primary);
+}
+
+
+
+@media only screen and (max-width: 600px){
+	/*Big smartphones [426px -> 600px]*/
+    .container-form-title{
+        margin: 8px;
+        width: calc(100% - 16px);
+    }
+}
+/*------------------------------*/

@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
 import authService from "../../services/auth.service";
 import { AuthContext } from "../../context/auth.context";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const SignupPage = () =>{
     const [userName, setUserName] = useState("")
@@ -43,13 +43,24 @@ const SignupPage = () =>{
 
     return(
         <>
-            <h1>Sign Up</h1>
-            <form onSubmit={handleSubmit}>
-                <input type="text" onChange={handleUserName}/>
-                <input type="email" onChange={handleEmail}/>
-                <input type="password" onChange={handlePassword}/>
-                <button>SIGN UP</button>
-            </form>
+        <section className='container-full-page-auth'>
+            <div className='container-form-title'>
+                <p>SIGN UP</p>
+                <form  className='auth-form' onSubmit={handleSubmit}>
+                    <label htmlFor="">Username:</label>
+                    <input className='input' type="text" onChange={handleUserName}/>
+                    <label htmlFor="">Email:</label>
+                    <input className='input' type="email" onChange={handleEmail}/>
+                    <label htmlFor="">Password:</label>
+                    <input className='input' type="password" onChange={handlePassword}/>
+                    <button className="btn">SIGN UP</button>
+                </form>
+                <div className='flex-column-center'>
+                        <p>Already have an account?</p>
+                        <Link to='/login'><p className='link'>Log in</p></Link>
+                    </div>
+            </div>
+        </section>
             {message && <p className="error-message">{message}</p>}
         </>
     );

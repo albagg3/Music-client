@@ -1,0 +1,11 @@
+
+.navbar-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--theme-color-transparent);
+    height: 80px;
+    margin: 8px;
+    border-radius: 10px;
+    color: var(--text-color-primary)
+}
