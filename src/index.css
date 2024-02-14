@@ -91,10 +91,12 @@ body{
 
 
 @media only screen and (max-width: 600px){
-	/*Big smartphones [426px -> 600px]*/
+    /*Big smartphones [426px -> 600px]*/
     .container-form-title{
         margin: 8px;
         width: calc(100% - 16px);
     }
 }
 /*------------------------------*/
+
+
