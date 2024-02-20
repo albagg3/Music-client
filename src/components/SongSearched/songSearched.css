@@ -1,0 +1,26 @@
+.small-img{
+    height:80px;
+    
+}
+.space-around{
+    justify-content: space-between;
+    align-items: center;
+}
+.song-container{
+    background-color: var(--theme-color-transparent);
+    
+    margin: 8px;
+    padding: 10px;
+    border-radius: 10px;
+    
+}
+
+
+
+.text-container{
+    margin:8px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}

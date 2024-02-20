@@ -67,6 +67,12 @@ function AuthProviderWrapper(props) {
     authenticateUser();
   }, []);
 
+  const getToken = () => {
+    const storedToken = localStorage.getItem("authToken")
+    return storedToken;
+
+  }
+
   return (
     <AuthContext.Provider
       value={{
@@ -76,6 +82,7 @@ function AuthProviderWrapper(props) {
         storeToken,
         authenticateUser,
         logOutUser,
+        getToken,
       }}
     >
       {props.children}

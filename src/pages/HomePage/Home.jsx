@@ -1,15 +1,19 @@
 import './home.css'
 
-import CreateBtn from "../../components/Navbar/Create";
-
+import CreateBtn from "../../components/Create/Create";
+import { useContext } from 'react';
+import { AuthContext } from '../../context/auth.context';
 
 
 const HomePage = () =>{
+    const{ isLoggedIn} = useContext(AuthContext)
     return(
         <>
             <div className="container-full-page-home">
                 <div className="fixed-btn">
-                    <CreateBtn ></CreateBtn>
+                {
+                    isLoggedIn?<CreateBtn ></CreateBtn> : ""
+                }
                 </div>
             </div>
         </>

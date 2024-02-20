@@ -5,6 +5,7 @@ import SignupPage from './pages/SignupPage/Signup'
 import Navbar from './components/Navbar/Navbar'
 import SearchPage from './pages/SearchPage/Search'
 import HomePage from './pages/HomePage/Home'
+import BottomNavBar from './components/BottomNavBar/BottomNavBar'
 
 function App() {
     return(
@@ -17,6 +18,7 @@ function App() {
                 {/* Si ya tienes una cancion elegida que no puedas crear a no ser que la borres */}
                 <Route path="/search" element={ <SearchPage />} /> 
             </Routes>
+            <BottomNavBar/>
         </>
     )
 }
