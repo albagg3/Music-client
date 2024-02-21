@@ -15,8 +15,8 @@ const BottomNavBar = ({song, setSongResult}) => {
     let content = null;
     // console.log(setSongResult())
     
-    const handleSearchSubmit = async(e) =>{
-        // e.preventDefault();
+    const handleSearchSubmit = async() =>{
+     
         try{
             const response = await fetch(URL + `/searchSong?song=${song}`, {headers:{"Authorization":`Bearer ${getToken()}`}})
             const songs = await response.json();
