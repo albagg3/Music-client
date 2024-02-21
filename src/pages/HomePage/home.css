@@ -6,15 +6,3 @@
     /* background-color: red; */
 }
 
-.fixed-btn{
-    width: 80px;
-    height: 80px;
-    position: fixed;
-    bottom: 10px;
-    left: calc(50% - 40px);
-    border: 2px solid var(--accent-color);
-    background-color: var(--theme-color-transparent);
-    border-radius: 50%;
-    aspect-ratio: 1;
-    padding: 10px;
-}

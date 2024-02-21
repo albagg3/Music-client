@@ -78,7 +78,7 @@ body{
 
 /* Authentication  LOGIN SIGNUP */
 .container-full-page-auth{
-    height: calc(100vh - 96px);
+    height: calc(100vh - 196px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -115,20 +115,3 @@ body{
 
 
 
-/*BTN search-bar & songs */
-
-
-.btn-circle{
-    border: 1px solid var(--accent-color);
-    padding: 10px;
-    height: 30px;
-    width: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    background-color: var(--theme-color-transparent);
-    color:var(--accent-color)
-}
-
-/*------------------------------*/

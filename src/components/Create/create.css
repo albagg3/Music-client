@@ -3,10 +3,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 .link{
     /* color:var(--text-color-secondary); */
     text-decoration: none;
+    text-align: center;
 }
 .icon{
     color:var(--color-accent);

@@ -12,15 +12,65 @@
     margin: 8px;
     padding: 10px;
     border-radius: 10px;
+  
     
 }
 
 
 
 .text-container{
-    margin:8px;
+    /* margin:8px; */
+    margin-right: 8px;
+    margin-left: 8px;
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    position: relative;
+}
+
+
+/*BTN search-bar & songs */
+
+
+.btn-circle{
+    border: 1px solid var(--accent-color);
+    padding: 10px;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: transparent;
+    color:var(--accent-color)
+}
+
+/*------------------------------*/
+
+  audio {
+    width: 100%;
+    height: 16px;
+}
+
+::-webkit-media-controls-panel{
+    background-color: var(--accent-color);
+    /* background-color: transparent; */
+    /* display: flex;
+    direction: ltr;
+    flex-direction: row;
+    align-items: center;
+    -webkit-user-select: none;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    z-index: 0;
+    overflow: hidden;
+    height: 16px;
+    text-align: right; */
+}
+.audio{
+    position: absolute;
+    bottom: -20px;
 }

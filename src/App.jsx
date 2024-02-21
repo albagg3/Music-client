@@ -18,7 +18,7 @@ function App() {
                 {/* Si ya tienes una cancion elegida que no puedas crear a no ser que la borres */}
                 <Route path="/search" element={ <SearchPage />} /> 
             </Routes>
-            <BottomNavBar/>
+           
         </>
     )
 }
